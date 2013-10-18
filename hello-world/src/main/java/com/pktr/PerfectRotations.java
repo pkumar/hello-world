@@ -8,6 +8,9 @@ import java.util.Map.Entry;
 public class PerfectRotations {
 
     public static boolean areRotations(String s, String t) {
+    	if(s.length() != t.length()) {
+    		return false;
+    	}
         Map<Character, Character> originNextCMap = getNextCharMap(s);
         Map<Character, Character> destNextCMap = getNextCharMap(t);
         int count = 0;
@@ -37,6 +40,8 @@ public class PerfectRotations {
     public static void main(String[] args) {
         System.out.println(PerfectRotations.areRotations("tackoverflows", "stackoverflow"));
         System.out.println(PerfectRotations.areRotations("hello", "elloh"));
+        System.out.println(PerfectRotations.areRotations("hello", "ohell"));
+        System.out.println(PerfectRotations.areRotations("hello", "ellhoellho"));
     }
 
 }
